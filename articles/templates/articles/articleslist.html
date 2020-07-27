@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
   </head>
   <body>
+
+
+    <div class="container">
+
     <h1>Articles List</h1>
 
     {% for article in articles %}
@@ -30,7 +34,10 @@
 
     <p>{{article.snippet}}</p>  <!-- Read article.main_text from our models.py -->
     <p>{{article.date}}</p>       <!-- Read article.date from our models.py -->
-
     {% endfor %}
+
+    </div>
+
+
   </body>
 </html>
