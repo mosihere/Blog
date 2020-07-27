@@ -1,0 +1,36 @@
+{% load static %}
+<!-- it means load css files here
+
+
+  <!-- these called template mehtods -->
+    <!-- curly braces and double % use when we want to use a pythonic (if-while-for etc..) -->
+    <!-- double Curly braces use when we want to call a data from someWhere -->
+
+    <!-- This articles refer to views.py 'Article' Variable that rend in rencer Function and with article key pair to article value
+    when we render it in views.py we can now read our data here
+    when we use a pythonic code we have to make it finish some where like this bellow: -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <h1>Articles List</h1>
+
+    {% for article in articles %}
+
+    <h2>
+      <a href="#">{{article.title}}</a>   <!-- we create link with article.title :) -->
+    </h2>
+
+    <p>{{article.snippet}}</p>  <!-- Read article.main_text from our models.py -->
+    <p>{{article.date}}</p>       <!-- Read article.date from our models.py -->
+
+    {% endfor %}
+  </body>
+</html>
