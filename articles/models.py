@@ -8,10 +8,11 @@ from django.db import models
 class Articles(models.Model):
     title = models.CharField(max_length = 100)
     slug = models.SlugField()
-    # Slug mostly use for a tags / for example when we click on a link it will check slug and go for it  
+    # Slug mostly use for a tags / for example when we click on a link it will check slug and go for it
     main_text = models.TextField()
     date = models.DateTimeField(auto_now_add = True)
-    # TODO: add thumbnaik
+    image = models.ImageField(default='default.jpg', blank=True)
+
     # TODO: add Author
 
 # We add this function to change Article Objects name into real name.

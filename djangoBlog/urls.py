@@ -27,6 +27,13 @@ from . import views
 # We import bellow modile for static files such as html-css-js
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+# Here we import setting.py
+from django.conf import settings
+
+
+# With this we can access URL
+from django.conf.urls.static import static
+
 # here we must use "path" and pass two parameters to that :)
 # first parameter is our url for example www.mosihere.com/about
 # second parameter is our Function that we Define in  File "Views.py"
@@ -44,3 +51,6 @@ urlpatterns = [
 
 # Some urls will add to our main urls :)
 urlpatterns += staticfiles_urlpatterns()
+
+# This will add this url to the folder that our medias keeping there
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

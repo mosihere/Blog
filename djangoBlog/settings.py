@@ -124,3 +124,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+
+# We Create this To access Media and images for our Project
+MEDIA_URL = '/media/'
+# Media root is our path to tell django to find our images there
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
