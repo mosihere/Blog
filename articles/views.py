@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from . import models
 
 
@@ -12,3 +12,8 @@ def articles_list(request):
     # we have to use path for render --> articles folder and articles_list.html File
     # The third arguement is a dict that let us use our articles in our template(html file)
     return render(request, 'articles/articleslist.html', {'articles':articles})
+
+
+# This slug arguement is come from urls.py(articles)
+def article_detail(request, slug):
+    return HttpResponse(slug)

@@ -23,7 +23,8 @@ Articles List
     {% for article in articles %}
 
     <h2>
-      <a href="#">{{article.title}}</a>   <!-- we create link with article.title :) -->
+      <!-- here  we use slug= article.slug and get slug from article in models.py -->
+      <a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a>   <!-- we create link with article.title :) -->
     </h2>
 
     <p>{{article.snippet}}</p>  <!-- Read article.main_text from our models.py -->
