@@ -1,6 +1,5 @@
-{% load static %}
-<!-- it means load css files here
-
+{% extends 'base.html' %}
+<!-- it means load and extends base.html file here-->
 
   <!-- these called template mehtods -->
     <!-- curly braces and double % use when we want to use a pythonic (if-while-for etc..) -->
@@ -10,16 +9,12 @@
     when we render it in views.py we can now read our data here
     when we use a pythonic code we have to make it finish some where like this bellow: -->
 
+{% block title %}
+Articles List
+{% endblock %}
+<!-- here we say, use the codes betweem two block for base.html-->
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Articles</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-  </head>
-  <body>
-
+    {% block content %}
 
     <div class="container">
 
@@ -37,6 +32,4 @@
 
     </div>
 
-
-  </body>
-</html>
+    {% endblock %}

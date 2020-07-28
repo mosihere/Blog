@@ -1,0 +1,30 @@
+{% load static %}
+
+<!-- This is the Base.html that use for create a base html that used for all others html file -->
+<!-- when ever we want to use as a instance, we use "curly bracket and Percent sign + block <name>"" and then "endblock" -->
+<!-- That part is gonna use as a Variable I guess ! and can change in each html file -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+    {% block title %}
+
+    {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+
+  </head>
+  <body>
+
+<div class="wrapper">
+  {% block content %}
+  {% endblock %}
+</div>
+
+  </body>
+</html>
