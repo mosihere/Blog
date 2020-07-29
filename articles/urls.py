@@ -6,6 +6,7 @@ app_name = 'articles'
 urlpatterns = [
 # '' or '/' is root page (home) and here our home page is (www.mosihere/articles)
     path('', views.articles_list, name='list'),
+    path('create', views.create_article, name='create'),
     path('<slug>', views.article_detail, name='detail'),
     # Here when sth type after home( here home is articles/ ) will know as slug and will add after articles/
 ]

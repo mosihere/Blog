@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from . import models
-
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -21,3 +21,10 @@ def article_detail(request, slug):
 
     # we will send and render these articles that we get above and send them to article_detail.html
     return render(request, 'articles/article_detail.html', {'article':article})
+
+
+
+# it's a decorator in python and django
+@login_required(login_url = '/accounts/login')
+def create_article(request):
+    return render(request, 'articles/create_articles.html')
