@@ -24,6 +24,17 @@
 <!-- articles: list  -> article refer to app name and list is the name in that app name -->
 <h2><a href="{% url 'articles:list' %}">LOGO</a></h2>
 
+<nav>
+  <ul>
+    <li>
+      <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+
+      </form>
+    </li>
+  </ul>
+</nav>
 
 <div class="wrapper">
   {% block content %}
