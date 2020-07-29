@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Sign Up</h1>
-<form class="site-form" action="index.html" method="post">
+<form class="site-form" action="/accounts/signup" method="post">
   {{form}}
+  {% csrf_token %}
   <input type="submit" name="" value="submit">
 </form>
 {% endblock %}
