@@ -44,9 +44,11 @@ urlpatterns = [
     path('about/', views.about),
     path('', views.home),
     # for import a url from another app urls.py we have to use path like example bellow:
-    path('articles/', include('articles.urls'))
+    path('articles/', include('articles.urls')),
     # it means if user wanna check articles page, include articles.urls
     # Tip --> (it means urls.py file of articles App)
+
+    path('accounts/', include('accounts.urls')),
 ]
 
 # Some urls will add to our main urls :)
