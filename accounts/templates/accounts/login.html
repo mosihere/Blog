@@ -6,6 +6,15 @@
 <form class="" action="{% url 'accounts:login' %}" method="post">
   {{form}}
   {% csrf_token %}
+
+
+<!-- if request.GET.next == True:-->
+  {% if request.GET.next %}
+  <input type="hidden" name="next" value="{{request.GET.next}}"> <!-- type='hiddden'  because we dont wanna show sth to users -->
+
+  {% endif %}
+
+
   <input type="submit" name="" value="login">
 </form>
 {% endblock %}

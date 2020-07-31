@@ -5,6 +5,11 @@
     <h1>
       Create Your Article!
     </h1>
+    <form class="site-form" action="{% url 'articles:create' %}" method="post", enctype="multipart/form-data"> <!-- we use enctype for send photo to the server and upload photoes-->
+        {{form}}
+        {% csrf_token %}
+        <input type="submit" name="" value="Create">
+    </form>
   </div>
 
 {% endblock %}

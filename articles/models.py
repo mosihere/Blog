@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 # Tip --> Slug is something like details of a urls
@@ -12,8 +12,9 @@ class Articles(models.Model):
     main_text = models.TextField()
     date = models.DateTimeField(auto_now_add = True)
     image = models.ImageField(default='default.jpg', blank=True)
+    # Foreingkey Used for save the author name In Database(who publish the article)
+    author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
 
-    # TODO: add Author
 
 # We add this function to change Article Objects name into real name.
 # use title as Article Name
