@@ -21,38 +21,43 @@
   </head>
   <body>
 
-<!-- articles: list  -> article refer to app name and list is the name in that app name -->
-<h2><a href="{% url 'articles:list' %}">LOGO</a></h2>
 
 
-<nav>
-  <ul>
-    {% if user.is_authenticated %} <!--  If user is login in account -->
-    <li>
-      <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
+<header>
+  <h2><a href="{% url 'articles:list' %}">LOGO</a></h2>
 
-      </form>
-    </li>
+  <!-- articles: list  -> article refer to app name and list is the name in that app name -->
 
-<li>
-  <a href="{% url 'articles:create' %}">Create New Article</a>
-</li>
+  <nav>
+    <ul>
+      {% if user.is_authenticated %} <!--  If user is login in account -->
+      <li>
+        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
 
-    {% else %} <!-- If user not login in her/his account -->
-    <li>
-      <a href="{% url 'accounts:login' %}">Login</a>
-    </li>
+        </form>
+      </li>
 
-    <li>
-    <a href="{% url 'accounts:signup' %}">Signup</a>
+  <li>
+    <a href="{% url 'articles:create' %}">Create New Article</a>
   </li>
 
+      {% else %} <!-- If user not login in her/his account -->
+      <li>
+        <a href="{% url 'accounts:login' %}">Login</a>
+      </li>
 
-    {% endif %}
-  </ul>
-</nav>
+      <li>
+      <a href="{% url 'accounts:signup' %}">Signup</a>
+    </li>
+
+
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+
 
 
 <div class="wrapper">

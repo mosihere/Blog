@@ -16,21 +16,32 @@ Articles List
 
     {% block content %}
 
-    <div class="container">
 
     <h1>Articles List</h1>
 
+
+ <div class="articles">
+
+
     {% for article in articles %}
 
-    <h2>
+  <div class="article">
+
+
+      <h2>
       <!-- here  we use slug= article.slug and get slug from article in models.py -->
       <a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a>   <!-- we create link with article.title :) -->
-    </h2>
+      </h2>
 
-    <p>{{article.snippet}}</p>  <!-- Read article.main_text from our models.py -->
-    <p>{{article.date}}</p>       <!-- Read article.date from our models.py -->
+      <p>{{article.snippet}}</p>  <!-- Read article.main_text from our models.py -->
+      <p>{{article.date}}</p>       <!-- Read article.date from our models.py -->
+
+      <p class="author">Added by {{article.author.username}}</p>
+
+</div>
     {% endfor %}
+    
+</div>
 
-    </div>
 
     {% endblock %}

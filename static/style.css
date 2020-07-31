@@ -6,16 +6,94 @@ body {
   color: #fff;
 }
 
+
 body *{
   font-family: arial;
 }
+
 
 h1,h2,h3,h4,h5,h6{
   font-weight: normal;
   margin: 0;
 }
 
+
 a,a:hover,a:visited{
   color:#fff;
   text-decoration: none;
+}
+
+
+.wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+div.wrapper h1{
+  text-align: center;
+  margin: 100px auto;
+  font-size: 2.4em;
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 0;
+}
+
+nav li{
+  display: inline-block;
+  margin-left:20px;
+}
+
+nav button{
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  font-size: 1em;
+}
+
+.articles{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.article{
+  padding: 10px;
+  border: 1px solid #00dba0;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.article h2{
+  font-size: 1.2em;
+}
+
+.article_detail .article{
+  padding: 0;
+}
+
+.article_detail .article img{
+  max-width: 100%;
+}
+
+.article_detail .article h2{
+  text-align: center;
+  font-size: 2em;
+}
+.article_detail .article p{
+  text-align: center;
+}
+
+.article .author{
+  padding: 10px;
+  background: #00dba0;
+  position: absolute;
+  right: 0;
+  button: 0;
+  margin: 0;
+  color: #f121f;
 }
