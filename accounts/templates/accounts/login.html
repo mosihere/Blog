@@ -3,7 +3,7 @@
 <h1>Login</h1>
 
 <!-- in form tag -> url 'accounts:login' -> account is the name of app_name variable in urls.py and login is the path and url pattern-->
-<form class="" action="{% url 'accounts:login' %}" method="post">
+<form class="site-form" action="{% url 'accounts:login' %}" method="post">
   {{form}}
   {% csrf_token %}
 

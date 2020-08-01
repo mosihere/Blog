@@ -34,6 +34,8 @@ from django.conf import settings
 # With this we can access URL
 from django.conf.urls.static import static
 
+
+from articles.views import articles_list
 # here we must use "path" and pass two parameters to that :)
 # first parameter is our url for example www.mosihere.com/about
 # second parameter is our Function that we Define in  File "Views.py"
@@ -42,13 +44,14 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about),
-    path('', views.home),
     # for import a url from another app urls.py we have to use path like example bellow:
     path('articles/', include('articles.urls')),
     # it means if user wanna check articles page, include articles.urls
     # Tip --> (it means urls.py file of articles App)
 
     path('accounts/', include('accounts.urls')),
+    path('', articles_list),
+
 ]
 
 # Some urls will add to our main urls :)
